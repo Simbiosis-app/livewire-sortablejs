@@ -113,8 +113,6 @@ window.Livewire?.directive('sortable-group', ({ el, directive, component }) => {
 
             let masterEl = el.closest('[wire\\:sortable-group]');
 
-
-
             let groups = Array.from(masterEl.querySelectorAll('[wire\\:sortable-group\\.item-group]')).map((el, index) => {
                 moveEndMorphMarker(el);
 
