@@ -113,6 +113,8 @@ window.Livewire?.directive('sortable-group', ({ el, directive, component }) => {
 
             let masterEl = el.closest('[wire\\:sortable-group]');
 
+
+
             let groups = Array.from(masterEl.querySelectorAll('[wire\\:sortable-group\\.item-group]')).map((el, index) => {
                 moveEndMorphMarker(el);
 
@@ -128,7 +130,13 @@ window.Livewire?.directive('sortable-group', ({ el, directive, component }) => {
                 };
             });
 
-            masterEl.closest('[wire\\:id]').__livewire.$wire.call(masterEl.getAttribute('wire:sortable-group'), groups);
+            let modified = {
+                from: evt.from.getAttribute('wire:sortable-group.item-group'),
+                to: evt.to.getAttribute('wire:sortable-group.item-group'),
+                item: evt.item.getAttribute('wire:sortable-group.item'),  
+            };
+
+            masterEl.closest('[wire\\:id]').__livewire.$wire.call(masterEl.getAttribute('wire:sortable-group'), groups, modified);
         },
     });
 });
