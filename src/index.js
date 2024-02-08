@@ -128,7 +128,7 @@ window.Livewire?.directive('sortable-group', ({ el, directive, component }) => {
                 };
             });
 
-            console.log("groups: ",groups);
+            console.log("evt: ",evt);
 
             /*let modified = {
                 from: evt.from.getAttribute('wire:sortable-group.item-group'),
