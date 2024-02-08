@@ -107,6 +107,7 @@ window.Livewire?.directive('sortable-group', ({ el, directive, component }) => {
             name: el.closest('[wire\\:sortable-group]').getAttribute('wire:sortable-group'),
         },
         onSort: (evt) => {
+            console.log('event: ', evt);
             if (evt.to !== evt.from && el === evt.from) {
                 return;
             }
@@ -127,8 +128,6 @@ window.Livewire?.directive('sortable-group', ({ el, directive, component }) => {
                     }),
                 };
             });
-
-            console.log('event: ', evt);
 
             /*let modified = {
                 from: evt.from.getAttribute('wire:sortable-group.item-group'),
