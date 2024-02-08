@@ -128,13 +128,15 @@ window.Livewire?.directive('sortable-group', ({ el, directive, component }) => {
                 };
             });
 
-            let modified = {
+            console.log('event: ', evt);
+
+            /*let modified = {
                 from: evt.from.getAttribute('wire:sortable-group.item-group'),
                 to: evt.to.getAttribute('wire:sortable-group.item-group'),
                 item: evt.item.getAttribute('wire:sortable-group.item'),  
             };
 
-            masterEl.closest('[wire\\:id]').__livewire.$wire.call(masterEl.getAttribute('wire:sortable-group'), groups, modified);
+            masterEl.closest('[wire\\:id]').__livewire.$wire.call(masterEl.getAttribute('wire:sortable-group'), groups, modified);*/
         },
     });
 });
