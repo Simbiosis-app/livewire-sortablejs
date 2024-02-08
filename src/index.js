@@ -128,6 +128,8 @@ window.Livewire?.directive('sortable-group', ({ el, directive, component }) => {
                 };
             });
 
+            console.log(groups);
+
             masterEl.closest('[wire\\:id]').__livewire.$wire.call(masterEl.getAttribute('wire:sortable-group'), groups);
         },
     });
