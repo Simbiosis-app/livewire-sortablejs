@@ -134,8 +134,6 @@ window.Livewire?.directive('sortable-group', ({ el, directive, component }) => {
                 item: evt.item.getAttribute('wire:sortable-group.item'),  
             };
 
-            console.log('modified', modified);
-
             masterEl.closest('[wire\\:id]').__livewire.$wire.call(masterEl.getAttribute('wire:sortable-group'), groups, modified);
         },
     });
